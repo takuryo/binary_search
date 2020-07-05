@@ -25,16 +25,15 @@ int main(){
   }
 
   lb = 0; 
-  ub = 1000000000; // a_i<=10^9
+  ub = 1000000001; // a_i<=10^9‚©‚Âo—Í‚ªlb
 
   while(ub - lb > 1) { 
     int mid = (lb + ub) / 2; 
 
     if(p(mid)) ub = mid; 
-    else  ub = mid; 
+    else  lb = mid; 
   }
   
-  printf("%d\n", ub);
-
+  printf("%d\n", lb);
   return 0;
 }
