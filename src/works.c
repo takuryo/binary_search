@@ -13,7 +13,7 @@ int p(int x){
   for(i = 0; i < k; i++){
     B[i] = 0;
     while (1){
-      if (B[i] + A[j] >= x) break; // 規定の仕事量に達しそうな場合、その前に終了して次へ
+      if (B[i] + A[j] > x) break; // 規定の仕事量に達しそうな場合、その前に終了して次へ
       B[i] += A[j];
       j++;
       if(j==n) return 1;  // 仕事を全部振れたので1(true)を出力
@@ -31,7 +31,7 @@ int main(){
   }
 
   lb = 0; 
-  ub = 1000000001; // a_iは最大10^4*10^5=10^9かつ出力はlb
+  ub = 1000000000; // a_iは最大10^4*10^5=10^9
 
   while(ub - lb > 1) { 
     int mid = (lb + ub) / 2; 
@@ -40,7 +40,7 @@ int main(){
     else  lb = mid; 
   }
   
-  printf("%d\n", lb);
+  printf("%d\n", ub);
 
   return 0;
 }

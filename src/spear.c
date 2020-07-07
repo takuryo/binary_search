@@ -8,10 +8,7 @@ int A[100000];
 int p(int x){
   int i,sum;
   sum = 0;
-  if(x == 0) return 0;   // 0‚ÅŠ„‚ê‚È‚¢‚Ì‚Å•ªŠò‚³‚¹‚Äˆ—
-  else {
-    for(i=0;i<n;i++) sum += A[i] / x; 
-  }
+  for(i=0;i<n;i++) sum += A[i] / x; 
   return sum < k;
 }
 
